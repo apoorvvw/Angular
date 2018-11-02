@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": false,
+        "experimentalDecorators": false,
+        "target": "es5",
+        "lib": [
+            "es5",
+            "dom"
+        ]
+    }
+}
