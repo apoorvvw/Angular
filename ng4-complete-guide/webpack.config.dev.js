@@ -1,9 +1,9 @@
 var path = require('path');
 
-var webpeckMerge = require('webpack-merge');
+var webpackMerge = require('webpack-merge');
 var commonConfig = require('./webpack.config.common');
 
-module.exports = webpeckMerge(commonConfig,{
+module.exports = webpackMerge(commonConfig,{
     devtool: 'cheap-eval-source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -11,6 +11,7 @@ module.exports = webpeckMerge(commonConfig,{
         filename: 'bundle.js',
         chunkFilename: '[id].chunk.js'
     },
+    mode: 'development',
     module: {
         rules: [
             {

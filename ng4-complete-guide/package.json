@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack-dev-server --inline --progress --port 8080 --config webpack.config.dev.js"
+    "build": "webpack-dev-server --inline --progress --port 8080 --config ./src/webpack.config.dev.js",
+    "build:prod": "del-cli dist && ngc -p tsconfig.aot.json && ngc -p tsconfig.aot.json && webpack --config webpack.config.prod.js --progress --profile --bail && del-cli 'src/app/**/*.js' 'src/app/**/*.ngfactory.ts' 'src/app/**/*.js.map' 'src/app/**/*.shim.ts' 'src/app/**/*.ngsummary.json'"
   },
   "author": "Apoorv Wairagade",
   "license": "ISC",
@@ -26,15 +27,20 @@
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
+    "@ngtools/webpack": "^7.0.4",
+    "@types/core-js": "^2.5.0",
+    "@types/node": "^10.12.2",
     "angular-router-loader": "^0.8.5",
     "angular2-template-loader": "^0.6.2",
     "awesome-typescript-loader": "^5.2.1",
     "del-cli": "^1.1.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "lite-server": "^2.4.0",
     "raw-loader": "^0.5.1",
     "typescript": "^3.1.6",
     "webpack": "^4.24.0",
+    "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10",
     "webpack-merge": "^4.1.4"
   }

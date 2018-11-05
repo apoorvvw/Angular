@@ -1,4 +1,4 @@
-var HtmlWebapck = require('html-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/app/main.ts',
@@ -22,7 +22,7 @@ module.exports = {
         exprContextCritical: false
     },
     plugins: [
-        new HtmlWebapckPlugin({
+        new HtmlWebpackPlugin({
             template: 'src/index.html'
         })
     ]
